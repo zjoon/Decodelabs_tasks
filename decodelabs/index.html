@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!-- ======================================== -->
+<!-- Project 1: Static Webpage Design        -->
+<!-- Project 2: Responsive Web Layout        -->
+<!-- Project 3: Interactive Web Elements     -->
+<!-- DecodeLabs Internship 2026              -->
+<!-- Author: Zainab R                        -->
+<!-- ======================================== -->
+
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set, responsive design, and SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zainab Restaurant - Best biryani and street food in Lahore">
+    <title>Zainab Restaurant | Home</title>
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+    HEADER / NAVIGATION (Semantic <header>)
+    ========================================== -->
+    <header class="navbar">
+        <!-- Logo section -->
+        <div class="navbar__logo">
+            <img src="logo.png" alt="Zainab Restaurant Logo" width="95" height="95">
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="navbar__links">
+            <a href="#home" class="navbar__link">Home</a>
+            <a href="#menu" class="navbar__link">Menu</a>
+            <a href="#offers" class="navbar__link">Offers</a>
+            <a href="#reviews" class="navbar__link">Reviews</a>
+        </nav>
+
+        <!-- Dark Mode Toggle Button (Project 3 - Interactive) -->
+        <button class="js-theme-toggle navbar__theme-btn" aria-label="Toggle dark mode" aria-pressed="false">
+            🌙
+        </button>
+
+        <!-- Hamburger Button for Mobile (Project 2 - Responsive) -->
+        <button class="js-hamburger-btn navbar__hamburger" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- ==========================================
+    MOBILE NAV POPOVER (Project 2 - Popover API)
+    ========================================== -->
+    <div class="js-mobile-nav mobile-nav" role="dialog" aria-label="Navigation menu">
+        <!-- Backdrop overlay for closing -->
+        <div class="js-nav-backdrop mobile-nav__backdrop"></div>
+        <!-- Mobile navigation panel -->
+        <nav class="mobile-nav__panel">
+            <button class="js-nav-close mobile-nav__close" aria-label="Close navigation menu">✕</button>
+            <a href="#home" class="js-mobile-link mobile-nav__link">🏠 Home</a>
+            <a href="#menu" class="js-mobile-link mobile-nav__link">🍽️ Menu</a>
+            <a href="#offers" class="js-mobile-link mobile-nav__link">🏷️ Offers</a>
+            <a href="#reviews" class="js-mobile-link mobile-nav__link">⭐ Reviews</a>
+            <a href="#contact" class="js-mobile-link mobile-nav__link">📞 Contact</a>
+        </nav>
+    </div>
+
+    <!-- ==========================================
+    MAIN CONTENT (Semantic <main>)
+    ========================================== -->
+    <main>
+
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero" id="home">
+            <div class="hero__content">
+                <!-- Only ONE H1 on the page (Project 1 requirement) -->
+                <h1 class="hero__title">Biryani So Good,<br>You'll Forget Your Name.</h1>
+                <p class="hero__description">Cinnamon, cloves, saffron, and love — one bite and you'll know.</p>
+                <a href="#menu" class="hero__button">ORDER NOW</a>
+            </div>
+        </section>
+
+        <!-- ===== FEATURED DISHES SECTION ===== -->
+        <section id="menu">
+            <div class="section__header">
+                <h2 class="section__title">Featured Dishes</h2>
+            </div>
+
+            <!-- Cards Grid (Project 1 - CSS Grid) -->
+            <div class="cards">
+
+                <!-- Card 1 - Chicken Biryani -->
+                <article class="card">
+                    <!-- Image with explicit dimensions (Project 1 requirement) -->
+                    <img src="food1.jpg" alt="Chicken Leg Piece Biryani" class="card__image" width="400" height="250"
+                        loading="lazy">
+                    <div class="card__content">
+                        <div class="card__badge">🔥 Bestseller</div>
+                        <div class="card__name">Chicken Leg Piece Biryani</div>
+                        <p class="card__description">Juicy leg piece, aromatic basmati rice, secret spices</p>
+                        <div class="card__rating">⭐ 4.8 (340+ reviews)</div>
+
+                        <!-- Expandable details (Project 3 - Interactive) -->
+                        <div class="js-card-details card__details">
+                            <p class="card__details-text">Marinated overnight in yogurt, ginger-garlic, and a 12-spice blend, then layered with caramelized onions and dum-cooked over slow charcoal for that smoky depth. Served with raita and salan.</p>
+                            <ul class="card__details-list">
+                                <li>🌶️ Spice Level: Medium-Hot</li>
+                                <li>⏱️ Prep Time: 25-30 mins</li>
+                                <li>🍚 Portion: Full plate, 1 leg piece</li>
+                            </ul>
+                        </div>
+
+                        <!-- Card footer with price and buttons -->
+                        <div class="card__footer">
+                            <span class="card__price">$10.99</span>
+                            <button class="js-toggle-details card__button" type="button" aria-expanded="false">🔍 View Details</button>
+                            <!-- Add to Cart button (Project 3 - Interactive) -->
+                            <button class="js-add-to-cart card__cart-btn" data-item="Biryani" type="button">🛒 Add</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 - Nahari -->
+                <article class="card">
+                    <img src="food2.jpg" alt="Special Beef Broth Nahari" class="card__image" width="400" height="250"
+                        loading="lazy">
+                    <div class="card__content">
+                        <div class="card__badge">👑 Royal Dish</div>
+                        <div class="card__name">Special Beef Broth Nahari</div>
+                        <p class="card__description">Slow-cooked beef shanks in traditional spices &amp; bone broth</p>
+                        <div class="card__rating">⭐ 4.9 (340+ reviews)</div>
+
+                        <div class="js-card-details card__details">
+                            <p class="card__details-text">A royal recipe slow-simmered for 8+ hours until the beef falls off the bone. Finished with a rich bone broth, fried onions, ginger juliennes, and a squeeze of fresh lemon.</p>
+                            <ul class="card__details-list">
+                                <li>🌶️ Spice Level: Mild-Medium</li>
+                                <li>⏱️ Prep Time: 8 hrs slow-cook</li>
+                                <li>🍞 Best With: Naan or Kulcha</li>
+                            </ul>
+                        </div>
+
+                        <div class="card__footer">
+                            <span class="card__price">$12.99</span>
+                            <button class="js-toggle-details card__button" type="button" aria-expanded="false">🔍 View Details</button>
+                            <button class="js-add-to-cart card__cart-btn" data-item="Nahari" type="button">🛒 Add</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 - Grilled Chicken -->
+                <article class="card">
+                    <img src="food3.jpg" alt="Grilled Honey Garlic Chicken" class="card__image" width="400" height="250"
+                        loading="lazy">
+                    <div class="card__content">
+                        <div class="card__badge">🍗 Chef Special</div>
+                        <div class="card__name">Grilled Honey Garlic Chicken</div>
+                        <p class="card__description">Juicy grilled chicken glazed with honey garlic sauce</p>
+                        <div class="card__rating">⭐ 4.7 (340+ reviews)</div>
+
+                        <div class="js-card-details card__details">
+                            <p class="card__details-text">Tender chicken thighs grilled over open flame, basted in a sticky honey-garlic glaze with a hint of chili. Charred at the edges, juicy in the middle, finished with toasted sesame.</p>
+                            <ul class="card__details-list">
+                                <li>🌶️ Spice Level: Mild</li>
+                                <li>⏱️ Prep Time: 20 mins</li>
+                                <li>🥗 Served With: Garlic dip & salad</li>
+                            </ul>
+                        </div>
+
+                        <div class="card__footer">
+                            <span class="card__price">$11.49</span>
+                            <button class="js-toggle-details card__button" type="button" aria-expanded="false">🔍 View Details</button>
+                            <button class="js-add-to-cart card__cart-btn" data-item="Grilled Chicken" type="button">🛒 Add</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- ===== SPECIAL OFFERS SECTION ===== -->
+            <div class="section__header section__header--spaced" id="offers">
+                <h2 class="section__title">Special Offers</h2>
+            </div>
+
+            <!-- Offers Grid -->
+            <div class="cards">
+
+                <!-- Offer 1 - Biryani 20% off -->
+                <article class="card card--offer">
+                    <img src="20.png" alt="20% off badge" class="card__offer-badge" width="70" height="70">
+                    <img src="food1.jpg" alt="Biryani Special Offer" class="card__image" width="400" height="250"
+                        loading="lazy">
+                    <div class="card__offer-content">
+                        <div class="card__offer-title">FLAT 20% OFF</div>
+                        <div class="card__offer-subtitle">20% Off on Biryani</div>
+                        <p class="card__offer-details">Use code: BIRYANI20<br>Valid till May 30</p>
+                        <a href="#" class="card__offer-link">Order Now →</a>
+                    </div>
+                </article>
+
+                <!-- Offer 2 - Poori Channay 20% off -->
+                <article class="card card--offer">
+                    <img src="20.png" alt="20% off badge" class="card__offer-badge" width="70" height="70">
+                    <img src="food8.jpg" alt="Poori Channay Special Offer" class="card__image" width="400" height="250"
+                        loading="lazy">
+                    <div class="card__offer-content">
+                        <div class="card__offer-title">FLAT 20% OFF</div>
+                        <div class="card__offer-subtitle">Poori Channay</div>
+                        <p class="card__offer-details">Use code: POORI20<br>Valid till May 30</p>
+                        <a href="#" class="card__offer-link">Order Now →</a>
+                    </div>
+                </article>
+
+                <!-- Offer 3 - Gulab Jamun 15% off -->
+                <article class="card card--offer">
+               
+                    <img src="food9.jpg" alt="Gulab Jamun Special Offer" class="card__image" width="400" height="250"
+                        loading="lazy">
+                    <div class="card__offer-content">
+                        <div class="card__offer-title">FLAT 15% OFF</div>
+                        <div class="card__offer-subtitle">Gulab Jamun</div>
+                        <p class="card__offer-details">Use code: GULAB15<br>Valid till June 5</p>
+                        <a href="#" class="card__offer-link">Order Now →</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ===== CUSTOMER REVIEWS SECTION ===== -->
+        <div class="reviews__header" id="reviews">
+            <h2>Customer Reviews</h2>
+        </div>
+
+        <section class="reviews__grid">
+
+            <!-- Review 1 -->
+            <article class="review">
+                <h3 class="review__title">Review — Poori Channay</h3>
+                <p class="review__text">"Best poori channay I've had in years!"</p>
+                <div class="review__footer">
+                    <span>— Zainab M.</span>
+                    <div>⭐⭐⭐⭐⭐ (5/5)</div>
+                </div>
+            </article>
+
+            <!-- Review 2 -->
+            <article class="review">
+                <h3 class="review__title">Review — Gulab Jamun</h3>
+                <p class="review__text">"The gulab jamuns are absolutely divine!"</p>
+                <div class="review__footer">
+                    <span>— Fatima A.</span>
+                    <div>⭐⭐⭐⭐⭐ (5/5)</div>
+                </div>
+            </article>
+
+            <!-- Review 3 -->
+            <article class="review">
+                <h3 class="review__title">Review — Biryani</h3>
+                <p class="review__text">"Hands down the best biryani in town!"</p>
+                <div class="review__footer">
+                    <span>— Hassan R.</span>
+                    <div>⭐⭐⭐⭐⭐ (5/5)</div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- ===== INTERACTIVE SECTION (Project 3) ===== -->
+        <section class="interactive-section">
+            <div class="section__header">
+                <h2 class="section__title">✨ Interactive Zone</h2>
+            </div>
+
+            <div class="interactive-container">
+
+                <!-- Counter Box - Dynamic Content Update -->
+                <div class="counter-box">
+                    <h3>🍽️ Order Counter</h3>
+                    <div class="counter-display">
+                        <button class="js-counter-btn" data-action="decrease" type="button" aria-label="Decrease quantity">−</button>
+                        <span class="js-counter-value counter-value">0</span>
+                        <button class="js-counter-btn" data-action="increase" type="button" aria-label="Increase quantity">+</button>
+                    </div>
+                    <p class="js-counter-message counter-message" role="status">Click + to add items!</p>
+                </div>
+
+                <!-- Cart Box - Dynamic Content Update -->
+                <div class="cart-box">
+                    <h3>🛒 Your Cart</h3>
+                    <p class="js-cart-status cart-status" role="status">Cart is empty</p>
+                    <p class="js-cart-count cart-count">Total Items: <span class="js-cart-total">0</span></p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+    FOOTER (Semantic <footer>)
+    ========================================== -->
+    <footer class="footer" id="contact">
+
+        <div class="footer__container">
+
+            <div class="footer__box">
+                <h2>Zainab R</h2>
+                <p>Best biryani &amp; street food in town. Fresh, spicy, delivered.</p>
+                <div class="footer__timing">🕒 Mon-Sun: 12pm - 11pm</div>
+            </div>
+
+            <div class="footer__box">
+                <h2>Quick Links</h2>
+                <ul class="footer__links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#offers">Offers</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__box">
+                <h2>Contact Us</h2>
+                <address>
+                    📞 +92 300 1234<br>
+                    ✉️ hello@zainabrestaurant.com<br>
+                    📍 Lahore, Pakistan
+                </address>
+            </div>
+
+            <div class="footer__box">
+                <h2>Follow Us</h2>
+                <div class="footer__social">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer__subscribe">
+            <p>📧 Subscribe for exclusive offers: zanimoon7@gmail.com</p>
+            <a href="mailto:zanimoon7@gmail.com" class="footer__subscribe-btn">Subscribe</a>
+        </div>
+
+        <div class="footer__payment">💳 We Accept: Visa | Mastercard | Easypaisa | JazzCash</div>
+        <p class="footer__copyright">© 2026 Zainab Restaurant. All rights reserved. | Privacy Policy</p>
+
+    </footer>
+
+    <!-- External JavaScript file (Project 3) -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
